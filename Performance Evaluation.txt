@@ -1,0 +1,20 @@
+lab7PerformanceEvaluation
+Roderick "Rance" White
+roderiw
+ECE 2230 Fall 2020
+MP7
+
+1. The code functioned properly linearly, though became increasingly longer with larger load factors. With a load factor of 0.99, output paused for a few seconds. The output for a double hashed table gave results much faster than the linear, even at a load factor of 0.99. The results for a separate chained table seemed to be slightly faster than that of the double hashed table. 
+
+2.
+|                   |               Random              |            Sequential             |
+| Separate Chaining | Avg Suc: 1.5; Avg UnSuc: 0.858774 | Avg Suc: 1.5; Avg UnSuc: 0.858774 |
+| Double            | Avg Suc: 1.5; Avg UnSuc: 6.72071  | Avg Suc: 1.5; Avg UnSuc: 6.72071  |
+| Linear            | Avg Suc: 4.0; Avg UnSuc: 21.3881  | Avg Suc: 4.0; Avg UnSuc: 21.3881  |
+
+3. The percentage of locations marked as deleted was already high for 50,000 trials, being 89.1583 %. This was increased to 98.3843 % with 100,000 trials, as well as taking a lot longer. 
+
+
+4. 
+The separate chaining seems to use a little more memory overall than open addressing. However, there were never any empty locations marked as deleted.
+

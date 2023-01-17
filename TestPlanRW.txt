@@ -1,0 +1,41 @@
+lab7TestPlan
+Roderick "Rance" White
+roderiw
+ECE 2230 Fall 2020
+MP6
+
+
+
+It was decided to start on the open address operations first, and the seperate chain operations after.
+
+First, the table construct function will be started, starting with an assurance that the probe type is one of those available. This test showed no errors.
+
+The insert key function will be coded and tested, with a few if statements to test if the same key already exists, so it can be replaced, and to test if the table is full, which will result in a 0 being returned and no changes being made to the table. This seemed to show the function working properly.
+
+The search function will be coded before the delete function, due to a predicted similarity between the two.
+
+Initially, it was planned to code the remove function next, though it was decided that the print function might be a good option to test if the output is correct. Other than an error where I capitalized a letter which should be lowercase, there were no errors.
+
+The remove function was implemented next, largely copying the code for retrieval function, with the only real change being the replacing of the key with null for the retrieved entry.
+
+The functions to return information on the table (number of entries, if the table was full, number of recent probes) were created next, due to their ease, with no errors.
+
+The table rehash function was constructed next, using the table construct and destruct functions to create the new table and get rid of the old table, respectively.
+
+Upon using provided drivers, a number of errors became apparent, mostly due to not considering that the old information and key would need to be freed before being replaced in the case of an insert function. Another error presented itself due to my assumption the pre-made driver functions would not already free rejected keys and information, causing me to free the information in the insert function if they couldn't be inserted. The frees were removed and the errors were fixed. A final error during these tests was due to me thinking I needed to destroy the old table in the rehash function, not realizing that it would also free the entries placed into the new table. This error was solved by simply freeing the old table's array and then the table.
+
+During this period, it was decided that, due to the similarity in the two functions, the majority of the search and delete function would rely on a single, new function. This allows for less coding and more ease in fixing errors.
+
+The separate chaining operations were constructed next, tested in the same order as the open addressing operations, with few errors occurring in any of them that weren't the result of simply mistyping.
+
+During testing for equilibrium driver for separate chaining, there was an issue where it would enter into an infinite loop. This seemed to be due to my assumption that deleting functioned similarly into both. This error was corrected by actually removing the nodes from the list. 
+
+At the end, it was decided to divide the open addressing and separate chaining operations, if the code was large enough, into separate functions, that would be called by the function. This was mostly for readability and to more easily locate what kind of operations are causing errors, if any showed themselves during the final phases of testing.
+
+
+
+
+
+
+
+
